@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1"
-   fx:controller="com.example.proyectojavafx.controlador_vista.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.proyectojavafx.controlador_vista.HomeController">
    <children>
       <AnchorPane prefHeight="71.0" prefWidth="600.0" style="-fx-background-color: #42cbf5;">
          <children>
@@ -18,7 +18,7 @@
                      </image>
                   </ImageView>
                   <Separator prefWidth="200.0" visible="false" />
-                  <ImageView fx:id="imgGuardar" fitHeight="50.0" fitWidth="50.0" layoutX="210.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imgGuardar" fitHeight="50.0" fitWidth="50.0" layoutX="210.0" layoutY="10.0" onMouseClicked="#btnGuardarClicek" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@imagenes/guarantee.png" />
                      </image>
@@ -33,6 +33,41 @@
             </HBox>
          </children>
       </AnchorPane>
-      <AnchorPane layoutY="83.0" prefHeight="317.0" prefWidth="600.0" style="-fx-background-color: #42cbf5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <AnchorPane layoutY="83.0" prefHeight="317.0" prefWidth="600.0" style="-fx-background-color: #42cbf5;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label layoutX="22.0" layoutY="58.0" text="Informacion Personal">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Separator layoutX="174.0" layoutY="65.0" prefHeight="3.0" prefWidth="401.0" style="-fx-border-color: #000;" />
+            <Label layoutX="22.0" layoutY="88.0" text="DNI" />
+            <Label layoutX="22.0" layoutY="122.0" text="Nombre" />
+            <Label layoutX="22.0" layoutY="156.0" text="Telefono" />
+            <Label layoutX="22.0" layoutY="194.0" text="Fecha de Nacimiento" />
+            <Label layoutX="320.0" layoutY="194.0" text="Ocupación" />
+            <Label layoutX="22.0" layoutY="241.0" text="Intereses:" />
+            <TextField fx:id="txtdni" layoutX="60.0" layoutY="84.0" />
+            <TextField fx:id="txtnombre" layoutX="79.0" layoutY="118.0" prefHeight="25.0" prefWidth="401.0" />
+            <TextField fx:id="txttelefono" layoutX="91.0" layoutY="152.0" />
+            <DatePicker fx:id="dtfechanacimiento" layoutX="154.0" layoutY="190.0" prefHeight="25.0" prefWidth="140.0" />
+            <ComboBox fx:id="cbocupacion" layoutX="405.0" layoutY="190.0" prefWidth="150.0" />
+            <Label layoutX="274.0" layoutY="156.0" text="Sexo:" />
+            <RadioButton fx:id="rbmujer" layoutX="320.0" layoutY="156.0" mnemonicParsing="false" text="Mujer">
+               <toggleGroup>
+                  <ToggleGroup fx:id="sexo" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rbhombre" layoutX="405.0" layoutY="156.0" mnemonicParsing="false" text="Hombre" toggleGroup="$sexo" />
+            <CheckBox fx:id="chtecnologia" layoutX="101.0" layoutY="241.0" mnemonicParsing="false" text="Tecnologia" />
+            <CheckBox fx:id="chdiseno" layoutX="205.0" layoutY="241.0" mnemonicParsing="false" text="Diseño" />
+            <CheckBox fx:id="chconsultoria" layoutX="294.0" layoutY="241.0" mnemonicParsing="false" text="Consultoria" />
+            <CheckBox fx:id="chformacion" layoutX="405.0" layoutY="241.0" mnemonicParsing="false" text="Formación" />
+            <ImageView fx:id="imfoto" fitHeight="105.0" fitWidth="89.0" layoutX="491.0" layoutY="81.0" onMouseClicked="#onImFotoClick" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@imagenes/guarantee.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
    </children>
 </AnchorPane>
