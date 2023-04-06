@@ -16,6 +16,27 @@ public class Persona {
     private boolean formacion;
     private String imagen;
 
+
+
+    public Persona(String linea) {
+        String[] datos = linea.split(";");
+        this.dni = datos[0];
+        this.nombre = datos[1];
+        this.telefono = datos[2];
+        this.sexo = datos[3].equals("true");
+        this.fechaNacimiento = LocalDate.parse(datos[4]);
+        this.ocupacion = datos[5];
+        this.tecnologia = Boolean.parseBoolean(datos[6]);
+        this.diseno = Boolean.parseBoolean(datos[7]);
+        this.consultoria = Boolean.parseBoolean(datos[8]);
+        this.formacion = Boolean.parseBoolean(datos[9]);
+        this.imagen = datos[10];
+    }
+
+    public Persona() {
+
+    }
+
     public String getImagen() {
         return imagen;
     }
@@ -104,5 +125,13 @@ public class Persona {
 
     public void setFormacion(boolean formacion) {
         this.formacion = formacion;
+    }
+
+    public String modelo2Fichero(){
+        return dni + ";" + nombre + ";" + telefono + ";" + sexo + ";" + fechaNacimiento.toString() + ";" + ocupacion + ";" + tecnologia + ";" + diseno + ";" + consultoria + ";" + formacion + ";" + imagen;
+    }
+
+    public void add(Persona persona) {
+
     }
 }
